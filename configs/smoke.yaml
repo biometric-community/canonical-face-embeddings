@@ -1,0 +1,27 @@
+device: cuda
+data:
+  celeba_root: ../../datasets/celeba/extracted/celeba
+  lfw_root: ../../datasets/lfw
+  calfw_root: ../../datasets/calfw/extracted/calfw-hf
+  cplfw_root: ../../datasets/cplfw/extracted/cplfw-hf
+  train_ratio: 0.7
+  max_images: 1500
+model:
+  image_size: 112
+  emb_dim: 64
+  losses: [softmax, cosface, arcface]
+train:
+  protocol: smoke
+  epochs: 1
+  batch_size: 32
+  lr: 0.05
+  num_workers: 2
+  seed: 42
+eval:
+  batch_size: 32
+  max_pairs: 200
+  n_enroll: 256
+paths:
+  checkpoint_dir: outputs/checkpoints/smoke
+  log_dir: outputs/logs/smoke
+  figure_dir: outputs/figures/smoke

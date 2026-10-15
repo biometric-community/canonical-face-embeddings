@@ -1,0 +1,27 @@
+device: cuda
+data:
+  celeba_root: ../../datasets/celeba/extracted/celeba
+  lfw_root: ../../datasets/lfw
+  calfw_root: ../../datasets/calfw/extracted/calfw-hf
+  cplfw_root: ../../datasets/cplfw/extracted/cplfw-hf
+  train_ratio: 0.7
+  max_images: null
+model:
+  image_size: 112
+  emb_dim: 128
+  losses: [softmax, cosface, arcface]
+train:
+  protocol: full
+  epochs: 6
+  batch_size: 64
+  lr: 0.05
+  num_workers: 4
+  seed: 42
+eval:
+  batch_size: 64
+  max_pairs: null
+  n_enroll: 1024
+paths:
+  checkpoint_dir: outputs/checkpoints/full
+  log_dir: outputs/logs/full
+  figure_dir: outputs/figures/full
