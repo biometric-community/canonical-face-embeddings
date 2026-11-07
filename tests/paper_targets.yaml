@@ -1,0 +1,7 @@
+# Published values from McNeely-White et al., "Canonical Face Embeddings", IEEE TBIOM
+# 2022, arXiv:2106.07822.
+source: arXiv:2106.07822
+tolerance_pp: 1.0
+
+# Appendix A, Fig. 5: lowest LFW accuracy (%) of any model or mapping in the pilot.
+lfw_lowest_accuracy: 98.1
